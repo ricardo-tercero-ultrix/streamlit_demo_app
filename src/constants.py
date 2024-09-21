@@ -9,6 +9,9 @@ APPS = {
     "photo_boot": {
         "page": "pages/photo_boot/main.py"
     },
+    "patents_chatgpt": {
+        "page": "pages/patents_chatgpt_main.py"
+    },
 }
 
 MX_GAS_PRICE_SOURCE = "https://gasolinamexico.com.mx/"

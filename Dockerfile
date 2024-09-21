@@ -11,6 +11,7 @@ RUN pip install -r requirements.txt
 
 FROM base
 
+COPY data/ /data/
 RUN mkdir /app
 WORKDIR /app
 COPY src/ .
@@ -20,3 +21,11 @@ COPY src/ .
 EXPOSE 8501
 
 ENTRYPOINT ["streamlit", "run", "app.py"]
+# CMD ["python"]
+
+
+# docker build . -t streamlit_tutorial && docker run -p 8501:8501 --name streamlit_tutorial --rm  streamlit_tutorial
+
+# docker build . -t streamlit_tutorial && docker run -it --rm streamlit_tutorial
+
+# docker build . -t streamlit_tutorial && docker create --name streamlit_tutorial streamlit_tutorial && docker exec -it streamlit_tutorial python
