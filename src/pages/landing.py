@@ -2,9 +2,11 @@ import streamlit as st
 from utils import (
     open_app,
 )
+import os
 
 st.title("My Apps")
 st.header("This page present my App, please select one of the options")
+st.write(os.getenv("OPENAI_API_KEY", None))
 
 column_1, column_2, column_3 = st.columns(3)
 
