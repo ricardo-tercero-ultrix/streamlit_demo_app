@@ -141,3 +141,9 @@ def get_gas_dataframe(df: pd.DataFrame, gas_name: str):
     return df[
         ["county", "label", gas_name, f"{gas_name}_max", f"{gas_name}_min", f"{gas_name}_size", "color", "lat", "long"]
     ].sort_values(by=[gas_name], ascending=False)
+
+def get_website_content(url: str) -> Optional[str]:
+    response = requests.get(url)
+    if response.status_code == 200:
+        return BeautifulSoup(response.text, "html.parser").find("body").text
+    return None

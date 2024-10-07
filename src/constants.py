@@ -14,6 +14,8 @@ APPS = {
     },
 }
 
+PATENT_CHAT_BOT_NAME = "patent_chat_bot"
+
 MX_GAS_PRICE_SOURCE = "https://gasolinamexico.com.mx/"
 MX_NL_GAS_PRICE_SOURCE = f"{MX_GAS_PRICE_SOURCE}/estados/nuevo-leon/"
 
@@ -82,3 +84,5 @@ MTY_METROPOLITAN_AREA_COUNTIES = {
         "color": "#468499",
     },
 }
+
+PATENT_FILE_NAME = "/data/streampatents-5000.csv"

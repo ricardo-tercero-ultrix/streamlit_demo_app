@@ -79,6 +79,11 @@ class PatentsHandler:
             return start, end
         return None
 
+    def __filter_by_patent_id(self, patent_id: str) -> Optional[pd.DataFrame]:
+        if self.__handler.is_column("id"):
+            return self.__handler.filter_by_column_value(column_name="id", value=patent_id)
+        return None
+
     def filter_by_year_of_filing(self, year: int, df: Optional[pd.DataFrame] = None) -> Optional[pd.DataFrame]:
         return self.__filter_by_year(year=year, column_name="filing", df=df)
 
@@ -133,3 +138,9 @@ class PatentsHandler:
             df = self.filter_by_year_of_granted(year=by_granted, df=df)
 
         return df
+
+    def get_patent_website(self, patent_id: str) -> Optional[str]:
+        df = self.__filter_by_patent_id(patent_id=patent_id)
+        if df is not None:
+            return df["resultlink"].to_list()[0]
+        return None
