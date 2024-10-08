@@ -18,7 +18,7 @@ with column_2:
     if st.button("Open App", key="mty_gas_price"):
         open_app("mty_gas_price")
 
-column_3.title("Patents Chat GPT")
+column_3.title("Patents Data View")
 with column_3:
     if st.button("Open App", key="patents_chatgpt"):
         open_app("patents_chatgpt")
